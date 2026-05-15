@@ -1,0 +1,48 @@
+{
+  "manifest_version": "0.1",
+  "canonical_url": "https://example.org/aeo",
+  "entity": {
+    "id": "",
+    "name": "Example Org",
+    "entity_type": "Organization",
+    "same_as": []
+  },
+  "headings": {
+    "h1_count": 2,
+    "question_heading_count": 0
+  },
+  "answer_blocks": {
+    "faq_count": 1,
+    "comparison_blocks": 0,
+    "code_examples": 0
+  },
+  "schema_org": {
+    "types": ["Organization"],
+    "linked_entities": 1,
+    "orphaned_entities": 2
+  },
+  "citations": {
+    "external_citations": 1,
+    "primary_sources": 1
+  },
+  "policy": {
+    "allows_ai_citation": false,
+    "content_license": ""
+  },
+  "claims": [
+    {
+      "id": "claim-service-area",
+      "predicate": "aeo:serviceArea",
+      "supported_by": ["src-missing"],
+      "confidence": "medium"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-about",
+      "url": "https://example.org/about",
+      "last_updated": "2024-01-12",
+      "authoritative": true
+    }
+  ]
+}

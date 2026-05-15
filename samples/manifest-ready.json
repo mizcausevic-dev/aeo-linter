@@ -1,0 +1,73 @@
+{
+  "manifest_version": "0.1",
+  "canonical_url": "https://kineticgain.com/aeo",
+  "entity": {
+    "id": "https://kineticgain.com/#org",
+    "name": "Kinetic Gain",
+    "entity_type": "Organization",
+    "same_as": [
+      "https://www.linkedin.com/company/kinetic-gain/",
+      "https://github.com/mizcausevic-dev"
+    ]
+  },
+  "llm_txt": {
+    "url": "https://kineticgain.com/llm.txt",
+    "last_updated": "2026-05-10"
+  },
+  "headings": {
+    "h1_count": 1,
+    "question_heading_count": 4
+  },
+  "answer_blocks": {
+    "faq_count": 3,
+    "comparison_blocks": 1,
+    "code_examples": 2
+  },
+  "schema_org": {
+    "types": ["Organization", "FAQPage", "TechArticle"],
+    "linked_entities": 4,
+    "orphaned_entities": 0
+  },
+  "citations": {
+    "external_citations": 7,
+    "primary_sources": 4
+  },
+  "policy": {
+    "allows_ai_citation": true,
+    "content_license": "CC-BY-4.0"
+  },
+  "claims": [
+    {
+      "id": "claim-service-area",
+      "predicate": "aeo:serviceArea",
+      "supported_by": ["src-about", "src-services"],
+      "confidence": "high"
+    },
+    {
+      "id": "claim-platform-focus",
+      "predicate": "aeo:focusArea",
+      "supported_by": ["src-services"],
+      "confidence": "high"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-about",
+      "url": "https://kineticgain.com/about",
+      "last_updated": "2026-04-22",
+      "authoritative": true
+    },
+    {
+      "id": "src-services",
+      "url": "https://kineticgain.com/services",
+      "last_updated": "2026-05-02",
+      "authoritative": true
+    },
+    {
+      "id": "src-docs",
+      "url": "https://kineticgain.com/aeo/guide",
+      "last_updated": "2026-03-18",
+      "authoritative": false
+    }
+  ]
+}

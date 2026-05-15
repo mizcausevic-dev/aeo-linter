@@ -1,0 +1,24 @@
+[package]
+name = "aeo-linter"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Rust CLI for validating AEO manifests, entity-link quality, schema hygiene, and answer-surface readiness."
+license = "AGPL-3.0"
+repository = "https://github.com/mizcausevic-dev/aeo-linter"
+homepage = "https://kineticgain.com/"
+readme = "README.md"
+keywords = ["aeo", "cli", "linter", "jsonld", "answer-engine-optimization"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "aeo-linter"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4", features = ["derive"] }
+colored = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

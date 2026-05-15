@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ready manifest with clean answer-engine posture.</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", system-ui, sans-serif;
+        background: linear-gradient(180deg, #02050a 0%, #07111b 100%);
+        color: #e6eefb;
+      }
+      .wrap {
+        width: 1500px;
+        margin: 0 auto;
+        padding: 42px;
+      }
+      .hero {
+        border: 1px solid rgba(255,255,255,0.08);
+        background: linear-gradient(180deg, rgba(10,17,28,0.96), rgba(6,11,19,0.96));
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 28px 60px rgba(0,0,0,0.34);
+      }
+      .top {
+        padding: 26px 30px 18px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+      .eyebrow {
+        color: #7fd0ff;
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: .28em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 16px 0 0;
+        font-size: 58px;
+        line-height: .94;
+        font-family: Georgia, "Times New Roman", serif;
+        letter-spacing: -.05em;
+      }
+      p {
+        margin: 14px 0 0;
+        color: #9cb1d0;
+        font-size: 18px;
+        line-height: 1.55;
+        max-width: 980px;
+      }
+      .terminal {
+        margin: 26px 30px 30px;
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(2,6,12,0.92);
+        overflow: hidden;
+      }
+      .terminal-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 18px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.03);
+      }
+      .lights {
+        display: flex;
+        gap: 8px;
+      }
+      .lights i {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        display: block;
+      }
+      .lights i:nth-child(1) { background: rgba(248,113,113,0.82); }
+      .lights i:nth-child(2) { background: rgba(251,191,36,0.82); }
+      .lights i:nth-child(3) { background: rgba(74,222,128,0.82); }
+      .cmd {
+        color: #7fd0ff;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+      pre {
+        margin: 0;
+        padding: 22px;
+        white-space: pre-wrap;
+        color: #dbeafe;
+        font-size: 15px;
+        line-height: 1.7;
+        font-family: "Cascadia Code", Consolas, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="hero">
+        <div class="top">
+          <div class="eyebrow">AEO Linter</div>
+          <h1>Ready manifest with clean answer-engine posture.</h1>
+          <p>AEO manifests should be able to pass with clear source coverage, strong entity linkage, and explicit AI citation policy.</p>
+        </div>
+        <div class="terminal">
+          <div class="terminal-head">
+            <div class="lights"><i></i><i></i><i></i></div>
+            <div class="cmd">cargo run -- lint .\samples\manifest-ready.json  (exit 0)</div>
+          </div>
+          <pre>READY .\samples\manifest-ready.json â€” score 100 / 100
+Entity:           Kinetic Gain
+Canonical URL:    https://kineticgain.com/aeo
+Findings:         0 errors / 0 warnings
+Lead issue:       Manifest is structurally ready for answer-engine consumption.
+Recommendation:   Publish the manifest and keep source freshness monitoring in the CI path.
+
+Rule results
+  [pass] llm_txt_presence â€” llm.txt discovery metadata is present and fresh.
+        evidence: https://kineticgain.com/llm.txt
+  [pass] entity_identity_linkage â€” Entity identity includes reusable sameAs linkage.
+        evidence: same_as_count=2
+  [pass] claim_source_coverage â€” Every claim references a declared source.
+        evidence: claims=2
+  [pass] schema_org_hygiene â€” Schema.org graph is linked tightly enough for citation reuse.
+        evidence: types=Organization,FAQPage,TechArticle
+  [pass] answer_surface_depth â€” Heading and answer-block coverage is strong enough for answer-engine extraction.
+        evidence: answer_surface_blocks=6
+  [pass] citation_depth â€” Citation depth is strong enough to support answer-engine grounding.
+        evidence: primary_sources=4 | external_citations=7
+  [pass] policy_posture â€” Policy metadata explicitly permits answer-engine citation flows.
+        evidence: CC-BY-4.0
+  [pass] source_freshness â€” Authoritative sources are fresh enough for current answer-engine trust.
+        evidence: sources=3</pre>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

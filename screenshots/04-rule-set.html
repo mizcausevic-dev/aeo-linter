@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rule categories explained in operator language.</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", system-ui, sans-serif;
+        background: linear-gradient(180deg, #02050a 0%, #07111b 100%);
+        color: #e6eefb;
+      }
+      .wrap {
+        width: 1500px;
+        margin: 0 auto;
+        padding: 42px;
+      }
+      .hero {
+        border: 1px solid rgba(255,255,255,0.08);
+        background: linear-gradient(180deg, rgba(10,17,28,0.96), rgba(6,11,19,0.96));
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 28px 60px rgba(0,0,0,0.34);
+      }
+      .top {
+        padding: 26px 30px 18px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+      .eyebrow {
+        color: #7fd0ff;
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: .28em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 16px 0 0;
+        font-size: 58px;
+        line-height: .94;
+        font-family: Georgia, "Times New Roman", serif;
+        letter-spacing: -.05em;
+      }
+      p {
+        margin: 14px 0 0;
+        color: #9cb1d0;
+        font-size: 18px;
+        line-height: 1.55;
+        max-width: 980px;
+      }
+      .terminal {
+        margin: 26px 30px 30px;
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(2,6,12,0.92);
+        overflow: hidden;
+      }
+      .terminal-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 18px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.03);
+      }
+      .lights {
+        display: flex;
+        gap: 8px;
+      }
+      .lights i {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        display: block;
+      }
+      .lights i:nth-child(1) { background: rgba(248,113,113,0.82); }
+      .lights i:nth-child(2) { background: rgba(251,191,36,0.82); }
+      .lights i:nth-child(3) { background: rgba(74,222,128,0.82); }
+      .cmd {
+        color: #7fd0ff;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+      pre {
+        margin: 0;
+        padding: 22px;
+        white-space: pre-wrap;
+        color: #dbeafe;
+        font-size: 15px;
+        line-height: 1.7;
+        font-family: "Cascadia Code", Consolas, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="hero">
+        <div class="top">
+          <div class="eyebrow">AEO Linter</div>
+          <h1>Rule categories explained in operator language.</h1>
+          <p>The explain mode keeps the CLI legible for people who need the intent behind each lint category.</p>
+        </div>
+        <div class="terminal">
+          <div class="terminal-head">
+            <div class="lights"><i></i><i></i><i></i></div>
+            <div class="cmd">cargo run -- explain  (exit 0)</div>
+          </div>
+          <pre>AEO Linter Rule Set
+  - llm.txt presence and freshness
+  - entity identity and sameAs linkage
+  - claim-to-source evidence coverage
+  - Schema.org relationship hygiene
+  - answer-surface depth (FAQ, comparisons, examples)
+  - citation depth and policy posture
+
+The goal is not only to validate syntax. It is to make content and metadata easier for answer engines to cite without drifting into hallucinated summaries.</pre>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
