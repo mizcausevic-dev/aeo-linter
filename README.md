@@ -60,7 +60,7 @@ support citation-friendly retrieval.
 ## Local run
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\aeo-linter"
+cd aeo-linter
 $env:Path = "$env:USERPROFILE\.cargo\bin;$env:Path"
 cargo run -- lint .\samples\manifest-ready.json
 ```
@@ -76,7 +76,7 @@ cargo run -- explain
 ## Validation
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\aeo-linter"
+cd aeo-linter
 $env:Path = "$env:USERPROFILE\.cargo\bin;$env:Path"
 cargo test
 cargo build
@@ -114,4 +114,4 @@ flowchart LR
   C --> F["Proof screenshots"]
 ```
 
-More detail lives in [C:\Users\chaus\dev\repos\aeo-linter\docs\architecture.md](/C:/Users/chaus/dev/repos/aeo-linter/docs/architecture.md).
+More detail lives in [docs/architecture.md](./docs/architecture.md).
