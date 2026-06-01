@@ -19,3 +19,9 @@ jobs:
       - run: cargo clippy --all-targets -- -D warnings
       - run: cargo build --release
       - run: cargo test
+
+# Least-privilege: read-only test/CI runs. GITHUB_TOKEN gets no write to
+# anything. The publish/release flows (where they exist) carry their own
+# scoped permissions per-workflow.
+permissions:
+  contents: read
