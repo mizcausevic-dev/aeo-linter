@@ -88,6 +88,8 @@ py -3.11 .\scripts\generate_screenshots.py
 
 ## Example text output
 
+Illustrative output captured while the fixed dates in `samples/manifest-ready.json` were fresh. A current run may report `watch` as those dates age. Update a real manifest only after checking its sources; do not refresh dates merely to improve a score.
+
 ```text
 READY samples\manifest-ready.json — score 100 / 100
 Entity:           Kinetic Gain
