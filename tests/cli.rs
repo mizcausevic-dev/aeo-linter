@@ -16,8 +16,11 @@ fn fresh_ready_fixture(name: &str) -> PathBuf {
         source["last_updated"] = today.clone().into();
     }
     let path = std::env::temp_dir().join(format!("aeo-linter-{}-{name}.json", std::process::id()));
-    std::fs::write(&path, serde_json::to_vec(&manifest).expect("serialize sample"))
-        .expect("write temporary sample");
+    std::fs::write(
+        &path,
+        serde_json::to_vec(&manifest).expect("serialize sample"),
+    )
+    .expect("write temporary sample");
     path
 }
 
