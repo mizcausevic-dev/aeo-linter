@@ -405,7 +405,7 @@ mod tests {
     use super::*;
 
     fn healthy_manifest() -> Manifest {
-        serde_json::from_str(
+        let mut manifest: Manifest = serde_json::from_str(
             r#"{
               "manifest_version": "0.1",
               "canonical_url": "https://example.com/aeo",
@@ -429,7 +429,14 @@ mod tests {
               ]
             }"#,
         )
-        .unwrap()
+        .unwrap();
+        // Keep the positive fixture fresh without changing the dated sample file.
+        let today = Utc::now().date_naive().to_string();
+        manifest.llm_txt.as_mut().unwrap().last_updated = today.clone();
+        for source in &mut manifest.sources {
+            source.last_updated = today.clone();
+        }
+        manifest
     }
 
     #[test]
@@ -437,6 +444,19 @@ mod tests {
         let report = lint_manifest(&healthy_manifest());
         assert_eq!(report.summary.posture, "ready");
         assert_eq!(report.summary.error_count, 0);
+    }
+
+    #[test]
+    fn stale_llm_txt_is_watch() {
+        let mut manifest = healthy_manifest();
+        manifest.llm_txt.as_mut().unwrap().last_updated =
+            (Utc::now().date_naive() - chrono::Duration::days(121)).to_string();
+        let report = lint_manifest(&manifest);
+        assert_eq!(report.summary.posture, "watch");
+        assert_eq!(report.summary.error_count, 0);
+        assert!(report.findings.iter().any(|finding| {
+            finding.rule_id == "llm_txt_presence" && finding.severity == "warning"
+        }));
     }
 
     #[test]

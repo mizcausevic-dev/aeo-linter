@@ -1,6 +1,6 @@
 # AEO Linter
 
-Rust CLI for **validating AEO manifests, entity-link quality, schema hygiene, answer-surface depth, and citation readiness**.
+Rust CLI for **linting a site-readiness manifest** covering entity links, source support, Schema.org signals, answer-surface depth, and citation posture.
 
 > **What this repo proves**
 >
@@ -8,8 +8,11 @@ Rust CLI for **validating AEO manifests, entity-link quality, schema hygiene, an
 
 ## Why this repo exists
 
-Most AEO documents can be syntactically valid while still being weak for real
-answer-engine use:
+A site can publish a syntactically valid AEO Protocol declaration and still be weak for
+answer-engine use. This CLI evaluates a separate `manifest_version` site-readiness
+document, not the Protocol's `aeo_version` declaration at `/.well-known/aeo.json`.
+Use [aeo-cli](https://github.com/mizcausevic-dev/aeo-cli) to validate a Protocol declaration.
+The site-readiness manifest records signals such as:
 
 - `llm.txt` is present but stale
 - entity identity is too thin for confident citation
@@ -19,8 +22,8 @@ answer-engine use:
 - policy metadata is ambiguous about AI citation
 
 `aeo-linter` focuses on those gaps directly. It is a narrower tool than a full
-SDK or crawler: it exists to tell you whether a manifest is truly ready to
-support citation-friendly retrieval.
+SDK or crawler: it reports rule findings for the supplied site-readiness manifest.
+Its score is an input to review, not proof that a live site is citation-ready.
 
 ## Screenshots
 
@@ -84,6 +87,8 @@ py -3.11 .\scripts\generate_screenshots.py
 ```
 
 ## Example text output
+
+Illustrative output captured while the fixed dates in `samples/manifest-ready.json` were fresh. A current run may report `watch` as those dates age. Update a real manifest only after checking its sources; do not refresh dates merely to improve a score.
 
 ```text
 READY samples\manifest-ready.json — score 100 / 100
